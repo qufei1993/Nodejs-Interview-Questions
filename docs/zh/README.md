@@ -7,7 +7,7 @@
 * 语言: [中文](/zh/) | [英文](/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
-## 基础
+## [基础](/zh/common.md)
 
 > 这个模块将会描述一些基础的或者通用的问题。
 

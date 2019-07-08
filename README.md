@@ -1,13 +1,13 @@
-# Nodejs-Questions
+# Nodejs-Interview-Questions
 
 This is a list of questions including Node.js learning and interviews. I will update this repository on a regular basis. You are also welcome to submit some PR or some good suggestions! I hope to help you with your study and work. Good luck ❤️
 
 If you want to learn more about the Node.js technology stack, recommend the open source project [Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
 
-Languages: [Chiness](/docs/zh/README.md) | [English](/docs/README.md)
-Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
+* Languages: [Chiness](/zh/) | [English](/)
+* Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
 
-## Common
+## [Common](/en/common.md)
 
 > Describe some basic or general issues here.
 
@@ -17,5 +17,5 @@ Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
 * 「Question4」What is an error-first callback?
 * 「Question5」Can you create Http Server in Node.js, explain with code?
 
-[View more](/docs/en/common.md)
+[View more](/en/common.md)
 
