@@ -18,3 +18,10 @@
 * 「Question5」你可以在 Node.js 中创建 Http 服务吗？通过代码来展示
 
 [View more](/docs/zh/common.md)
+
+## [测试](/en/test.md)
+
+* 「Question1」什么是测试金字塔? 请给一个例子!
+* 「Question2」什么是 Stub？用一个例子说明
+
+[View more](/docs/zh/test.md)
