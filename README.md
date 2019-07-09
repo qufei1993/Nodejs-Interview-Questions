@@ -24,3 +24,13 @@ If you want to learn more about the Node.js technology stack, recommend the open
 
 [View more](/en/test.md)
 
+## [Event/Async](/en/event-async.md)
+
+* 「Question1」What are the timing features of Node.js?
+* 「Question2」What is the difference between process.nextTick and setTimeout recursive calls?
+* 「Question3」Explain event loop architecture of JavaScript.
+* 「Question4」Explain event loop architecture of NodeJS.
+* 「Question5」What is Event Loop and Event Emitter ?
+
+[View more](/en/event-async.md)
+
