@@ -4,7 +4,7 @@ This is a list of questions including Node.js learning and interviews. I will up
 
 If you want to learn more about the Node.js technology stack, recommend the open source project [Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
 
-* Languages: [Chiness](/zh/) | [English](/)
+* Languages: [Chiness](/docs/zh/) | [English](/)
 * Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [Common](/en/common.md)
@@ -17,7 +17,7 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * 「Question4」What is an error-first callback?
 * 「Question5」Can you create Http Server in Node.js, explain with code?
 
-## [Test](/en/test.md)
+## [Test](/docs/en/test.md)
 
 * 「Question1」What's a test pyramid? Give an example!
 * 「Question2」What's a stub? Name a use case.
@@ -31,6 +31,7 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * 「Question3」Explain event loop architecture of JavaScript.
 * 「Question4」Explain event loop architecture of NodeJS.
 * 「Question5」What is Event Loop and Event Emitter ?
+* 「Question6」What is “callback hell” and how can it be avoided?
 
 [View more](/en/event-async.md)
 

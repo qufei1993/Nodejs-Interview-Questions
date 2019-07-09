@@ -17,14 +17,14 @@
 * 「Question4」什么是错误优先的回调函数？
 * 「Question5」你可以在 Node.js 中创建 Http 服务吗？通过代码来展示
 
-[View more](/zh/common.md)
+[阅读更多](/zh/common.md)
 
 ## [测试](/zh/test.md)
 
 * 「Question1」什么是测试金字塔? 请给一个例子!
 * 「Question2」什么是 Stub？用一个例子说明
 
-[View more](/zh/test.md)
+[阅读更多](/zh/test.md)
 
 ## [事件/异步](/zh/event-async.md)
 
@@ -33,5 +33,6 @@
 * 「Question3」解释下 JavaScript 中的 EventLoop（事件循环）？
 * 「Question4」解释下 NodeJS 中的 EventLoop（事件循环）？
 * 「Question5」什么是 Event Loop 和 Event Emitter ?
+* 「Question6」什么是“回调地狱”及如何避免它？
 
-[View more](/en/event-async.md)
+[阅读更多](/en/event-async.md)

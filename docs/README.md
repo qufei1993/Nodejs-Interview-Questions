@@ -31,6 +31,7 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * 「Question3」Explain event loop architecture of JavaScript.
 * 「Question4」Explain event loop architecture of NodeJS.
 * 「Question5」What is Event Loop and Event Emitter ?
+* 「Question6」What is “callback hell” and how can it be avoided?
 
 [View more](/en/event-async.md)
 
