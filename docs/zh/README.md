@@ -4,7 +4,7 @@
 
 如果您这想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
-* 语言: [中文](/zh/) | [英文](/)
+* 语言: [中文](/zh/) | [English](/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [基础](/zh/common.md)
@@ -19,7 +19,8 @@
 * ```[Question6]``` Node.js 的核心组件有哪些？
 * ```[Question7]``` 什么是“回调地狱”及如何避免它？
 * ```[Question8]``` 什么是 Node.js 的事件驱动编程？
-* ```[Question9]``` Node.js 可以做什么? 10 个 Node.js 的应用场景?
+* ```[Question9]``` 什么是 NPM? 在 Node.js 中什么时候需要 NPM? 
+* ```[Question10]``` Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
 [阅读更多](/zh/common.md)
 

@@ -2,9 +2,9 @@
 
 This is a list of questions including Node.js learning and interviews. I will update this repository on a regular basis. You are also welcome to submit some PR or some good suggestions! I hope to help you with your study and work. Good luck ❤️
 
-If you want to learn more about the Node.js technology stack, recommend the open source project ```[Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
+If you want to learn more about the **Node.js technology stack**, recommend the open source project [Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
 
-* Languages: [Chiness](/zh/) | [English]()
+* Languages: [中文](/docs/zh/) | [English]()
 * Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [Common](/docs/common.md)
@@ -19,7 +19,8 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * ```[Question6]``` What are the main components of Node.js?
 * ```[Question7]``` What is “callback hell” and how can it be avoided?
 * ```[Question8]``` What are the event-Driven Programming of Node.js?
-* ```[Question9]``` What does Node.js do? 10 application scenarios for Node.js?
+* ```[Question9]``` What is NPM? What is the need of NPM in Node.js?
+* ```[Question10]``` What does Node.js do? 10 application scenarios for Node.js?
 
 [View more](/docs/common.md)
 

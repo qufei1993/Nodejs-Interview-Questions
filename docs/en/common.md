@@ -207,7 +207,39 @@ It starts working when you call the getJSONfromDestination method and send param
 
 Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)
 
-## Q9: What does Node.js do? 10 application scenarios for Node.js?
+## Q9: What is NPM? What is the need of NPM in Node.js?
+
+NPM stands for Node.js Package Management. It comes with Node.js platform and allows us to install various packages for Node.js. This package manages and supports various commands to install and remove the modules. Here one important note is we require either package.json file or the node_modules folder to install modules locally.
+
+One of the best things about npm is that it locally stores all dependencies. For example, if module X uses module A version 1.0, and module Y uses module A version 1.5, then both X and Y will have their own local copies of module A.
+ 
+```js
+// Module X
+{
+  "name": "X",
+  "dependencies": {
+    "A": "^1.0"
+  }
+}
+```
+
+```js
+// Module Y
+{
+  "name": "Y",
+  "dependencies": {
+    "A": "^1.5"
+  }
+}
+```
+
+**Need of npm package**
+ 
+When we are developing some Node.js projects, we may encounter some places that need NPM, such as linking Redis, MongoDB, or sending a request Request. These modules can make us more focused on business development, of course, sometimes you will have something special. The need, at this time, may need to encapsulate an NPM module to achieve reuse.
+
+Source: [How to Create Nodejs Module and Publish Over to Npm](https://www.c-sharpcorner.com/UploadFile/g_arora/how-to-create-nodejs-module-and-publish-over-to-npm/)
+
+## Q10: What does Node.js do? 10 application scenarios for Node.js?
 
 Web Server Backend (Java, PHP do node. JS can Do)、Command-line tools，Now count the 10 scenarios of Node.js:
 

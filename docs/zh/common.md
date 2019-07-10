@@ -1,6 +1,8 @@
 
 # 基础
 
+这里记录一些 Node.js 入门需要知道的一些问题或者一些常见的面试问题。
+
 ## Q1: 什么是 Node.js?
 
 Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。它是一个开源和跨平台的服务端应用程序。任何人都可以编写 JavaScript 代码来开发 Node.js 应用程序。它可以运行于 Microsoft Windows,Linux, or OS 系统。
@@ -218,7 +220,41 @@ getJSONfromDestination(jsonfinished);
 
 Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)
 
-## Q9: Node.js 可以做什么? 10 个 Node.js 的应用场景?
+## Q9: 什么是 NPM? 在 Node.js 中什么时候需要 NPM? 
+
+NPM 是 Node.js 中的包管理器。允许我们为 Node.js 安装各种模块，这个包管理器为我们提供了安装、删除等其它命令来管理模块。这里有一点我们需要注意，我们必须要有一个 package.json 文件或 node_modules 目录安装模块到本地。
+
+NPM 最好的一点是它会在本地存储我们所安装的依赖项，存在于 package.json 的 dependencies 对象里。例如，如果一个模块 X 使用了模块 A 版本为 1.0，模块 Y 使用了模块 A 版本为 1.5，那么模块 X 或 Y 都将在本地拥有自己对应的模块 A 的副本。
+
+```js
+// 模块 X
+{
+  "name": "X",
+  "dependencies": {
+    "A": "^1.0"
+  }
+}
+```
+
+```js
+// 模块 Y
+{
+  "name": "Y",
+  "dependencies": {
+    "A": "^1.5"
+  }
+}
+```
+
+**需要 NPM 包**
+
+在我们在开发一些 Node.js 项目时，可能会遇到一些地方需要 NPM，例如链接 Redis、MongoDB 或者发送请求 Request 等，有了这些模块可以使我们更专注于业务开发，当然有时你会有些特别的需求，这时可能需要自己去封装一个 NPM 模块，实现复用。
+
+点击下面 Source 阅读更多关于 NPM 的相关内容
+
+Source: [How to Create Nodejs Module and Publish Over to Npm](https://www.c-sharpcorner.com/UploadFile/g_arora/how-to-create-nodejs-module-and-publish-over-to-npm/)
+
+## Q10: Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
 Node.js 可以做 Web 服务端、命令行工具 (Java, PHP 可以做的. JS 也可以做)，现在让我们看下 Node.js 的 10 个应用场景:
 
