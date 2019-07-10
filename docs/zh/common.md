@@ -1,4 +1,5 @@
 
+# 基础
 
 ## Q1: 什么是 Node.js?
 
@@ -58,7 +59,7 @@ console.log("hello world!");
 
 按 Enter 键
 
-![](./img/node-interview/install-node-check.jpg)
+![](../img/node-hello-world.png)
 
 
 ## Q3: 如何用 Node.js 监听 80 端口？

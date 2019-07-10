@@ -1,4 +1,5 @@
 
+# Common
 
 ## Q1: What is Node.js?
 
@@ -52,9 +53,7 @@ console.log(“NeErAj KuMaR”);
 
 Press Enter
 
-![](./img/node-interview/install-node-check.jpg)
-
-
+![](../img/node-hello-world.png)
 
 ## Q3: How can you listen on port 80 with Node?
 
