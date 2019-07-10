@@ -35,4 +35,19 @@
 * 「Question5」什么是 Event Loop 和 Event Emitter ?
 * 「Question6」什么是“回调地狱”及如何避免它？
 
-[阅读更多](/en/event-async.md)
+[阅读更多](/zh/event-async.md)
+
+## [进程/线程](/zh/process-threads.md)
+
+* 「Question1」Node.js 什么是进程和线程？之间的区别？
+* 「Question2」什么是孤儿进程？
+* 「Question3」创建多进程时，代码里有 app.listen(port) 在进行 fork 时，为什么没有报端口被占用？
+* 「Question4」什么是 IPC 通信，如何建立 IPC 通信？什么场景下需要用到 IPC 通信？
+* 「Question5」Node.js 是单线程还是多线程？进一步会提问为什么是单线程？
+* 「Question6」关于守护进程，是什么、为什么、怎么编写？
+* 「Question7」实现一个简单的命令行交互程序？
+* 「Question8」如何让一个 js 文件在 Linux 下成为一个可执行命令程序？
+* 「Question9」进程的当前工作目录是什么? 有什么作用？
+* 「Question10」多进程或多个 Web 服务之间的状态共享问题？
+
+[阅读更多](/zh/process-threads.md)

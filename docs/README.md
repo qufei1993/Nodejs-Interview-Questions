@@ -35,3 +35,17 @@ If you want to learn more about the Node.js technology stack, recommend the open
 
 [View more](/en/event-async.md)
 
+## [Process/Threads](/en/process-threads.md)
+
+* 「Question1」What are processes and threads? difference between?
+* 「Question2」What is an orphan process?
+* 「Question3」creates multiple processes, there is ```app.listen(port)``` in the code. Why is it not reported that the port is occupied when forking?
+* 「Question4」What is IPC communication, how to establish IPC communication? What scenarios need to use IPC communication?
+* 「Question5」Node.js single-threaded or multi-threaded? Further questioning why is it single threaded?
+* 「Question6」about the daemon, what, why, how to write?
+* 「Question7」implements a simple command line interaction program?
+* 「Question8」make a js file an executable command program under Linux?
+* 「Question9」What is the current working directory of the process? What is the role?
+* 「Question10」State sharing issues between multiple processes or multiple web services?
+
+[阅读更多](/en/process-threads.md)
