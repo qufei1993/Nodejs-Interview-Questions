@@ -255,3 +255,12 @@ Web Server Backend (Java, PHP do node. JS can Do)、Command-line tools，Now cou
 10. Timer Task Tool: Later
 
 Source: [What does node. js do? 10 application scenarios for node. js](https://topic.alibabacloud.com/a/what-does-node-js-do-10-application-scenarios-for-node-js_4_87_30002440.html)
+
+
+## Q11: What is LTS releases of Node.js why should you care?
+
+An LTS(Long Term Support) version of Node.js receives all the critical bug fixes, security updates and performance improvements.
+
+LTS versions of Node.js are supported for at least 18 months and are indicated by even version numbers (e.g. 4, 6, 8). They’re best for production since the LTS release line is focussed on stability and security, whereas the Current release line has a shorter lifespan and more frequent updates to the code. Changes to LTS versions are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
+
+Source: [github.com/i0natan/nodebestpractices](github.com/i0natan/nodebestpractices)
