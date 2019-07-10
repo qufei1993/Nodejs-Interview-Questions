@@ -138,3 +138,58 @@ fs.readFile('/files/help.txt', function(err, buf) {
 ```
 
 Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://www.c-sharpcorner.com/UploadFile/dbd951/introduction-to-nodejs-a-ssjs-part-i/)
+
+## Q7：什么是“回调地狱”及如何避免它？
+
+“回调地狱”是指严重的回调嵌套，这些回调嵌套使得代码变得难以阅读和维护。
+
+“Callback hell” refers to heavily nested callbacks that have become unweildy or unreadable.
+
+以下是回调嵌套的示例：
+
+```js
+query("SELECT clientId FROM clients WHERE clientName='picanteverde';", function(id){
+  query(`SELECT * FROM transactions WHERE clientId=${id}`, function(transactions){
+    transactions.each((transac) => {
+      query(`UPDATE transactions SET value = ${transac.value*0.1} WHERE id=${transac.id}`, (error) => {
+        if(!error){
+          console.log("success!!");
+        }else{
+          console.log("error");
+        }
+      });
+    });
+  });
+});
+```
+
+在某种程度上，修复“回调地狱”的方式是模块化。回调被分解为独立的函数，这些函数可以通过参数进行传递。所以，针对以上代码的第一个改进如下所示：
+
+```js
+const logError = (error) => {
+    if(!error){
+      console.log("success!!");
+    }else{
+      console.log("error");
+    }
+},
+  updateTransaction = (t) => {
+    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}, logError);
+},
+  handleTransactions = (transactions) => {
+    transactions.each(updateTransaction);
+},
+  handleClient = (id) => {
+    query(`SELECT * FROM transactions WHERE clientId=${id}`, handleTransactions);
+};
+
+query("SELECT clientId FROM clients WHERE clientName='picanteverde';",handleClient);
+```
+
+尽管这个代码相比第一个示例更容易易读，而且我们创建的的函数还可以得到复用。但是在某些情况下，我们想要使程序更健壮可通过 Promise 来解决。Promises allow additional desirable behavior such as error propagation and chaining. Node.js includes native support for them.
+
+此外，generators 也提供了强大了回调地狱解决方案，使用它可以解决不同回调之间的依赖关系。然而 generators 会更高级一些使用起来会复杂一些。关于 Generators 更多信息可以阅读这篇文章 [Generators in Node.js](http://strongloop.com/strongblog/how-to-generators-node-js-yield-use-cases/)
+
+然而，以上的虽然能很好解决回调地狱问题，但是目前有了更好的方案 Async/Await。使用 Async/Await 需要注意 Node.js 版本要在 v7.5 版本之上。
+
+Source: [8 Essential Node.js Interview Questions](https://www.toptal.com/nodejs/interview-questions)

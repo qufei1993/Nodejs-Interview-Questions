@@ -131,3 +131,56 @@ fs.readFile('/files/help.txt', function(err, buf) {
 ```
 
 Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://www.c-sharpcorner.com/UploadFile/dbd951/introduction-to-nodejs-a-ssjs-part-i/)
+
+## Q7: What is “callback hell” and how can it be avoided?
+
+“Callback hell” refers to heavily nested callbacks that have become unweildy or unreadable.
+
+An example of heavily nested code is below:
+
+```js
+query("SELECT clientId FROM clients WHERE clientName='picanteverde';", function(id){
+  query(`SELECT * FROM transactions WHERE clientId=${id}`, function(transactions){
+    transactions.each((transac) => {
+      query(`UPDATE transactions SET value = ${transac.value*0.1} WHERE id=${transac.id}`, (error) => {
+        if(!error){
+          console.log("success!!");
+        }else{
+          console.log("error");
+        }
+      });
+    });
+  });
+});
+```
+
+At one point, the primary method to fix callback hell was modularization. The callbacks are broken out into independent functions which can be called with some parameters. So the first level of improvement might be:
+
+```js
+const logError = (error) => {
+    if(!error){
+      console.log("success!!");
+    }else{
+      console.log("error");
+    }
+},
+  updateTransaction = (t) => {
+    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}, logError);
+},
+  handleTransactions = (transactions) => {
+    transactions.each(updateTransaction);
+},
+  handleClient = (id) => {
+    query(`SELECT * FROM transactions WHERE clientId=${id}`, handleTransactions);
+};
+
+query("SELECT clientId FROM clients WHERE clientName='picanteverde';",handleClient);
+```
+
+Even though this code is much easier to read, and we created some functions that we can even reuse later, in some cases it may be appropriate to use a more robust solution in the form of promises. Promises allow additional desirable behavior such as error propagation and chaining. Node.js includes native support for them.
+
+Additionally, a more supercharged solution to callback hell was provided by generators, as these can resolve execution dependency between different callbacks. However, generators are much more advanced and it might be overkill to use them for this purpose. To read more about generators you can start with [this post]((http://strongloop.com/strongblog/how-to-generators-node-js-yield-use-cases/)).
+
+However, these approaches are pretty dated at this point. The current solution is to use async/await—an approach that leverages Promises and finally makes it easy to flatten the so-called “pyramid of doom” shown above.
+
+Source: [8 Essential Node.js Interview Questions](https://www.toptal.com/nodejs/interview-questions)

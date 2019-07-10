@@ -17,6 +17,7 @@
 * ```[Question4]``` 什么是错误优先的回调函数？
 * ```[Question5]``` 你可以在 Node.js 中创建 Http 服务吗？通过代码来展示
 * ```[Question6]``` Node.js 的核心组件有哪些？
+* ```[Question7]``` 什么是“回调地狱”及如何避免它？
 
 [阅读更多](/zh/common.md)
 
@@ -34,7 +35,6 @@
 * ```[Question3]``` 解释下 JavaScript 中的 EventLoop（事件循环）？
 * ```[Question4]``` 解释下 NodeJS 中的 EventLoop（事件循环）？
 * ```[Question5]``` 什么是 Event Loop 和 Event Emitter ?
-* ```[Question6]``` 什么是“回调地狱”及如何避免它？
 
 [阅读更多](/zh/event-async.md)
 
