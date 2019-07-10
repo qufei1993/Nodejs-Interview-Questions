@@ -2,7 +2,7 @@
 
 这是一份包含 Node.js 学习与面试的问题列表，我会定期的更新本仓库，也欢迎您提交一些 PR 或者一些好的建议！希望能对您的学习与工作有所帮助，Good luck ❤️
 
-如果您这想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
+如果您想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
 * 语言: [:cn: 中文](/zh/) | [:uk: English](/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
