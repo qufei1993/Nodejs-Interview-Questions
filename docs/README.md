@@ -23,13 +23,6 @@ If you want to learn more about the Node.js technology stack, recommend the open
 
 [View more](/en/common.md)
 
-## [Test](/en/test.md)
-
-* ```[Question1]``` What's a test pyramid? Give an example!
-* ```[Question2]``` What's a stub? Name a use case.
-
-[View more](/en/test.md)
-
 ## [Event/Async](/en/event-async.md)
 
 * ```[Question1]``` What are the timing features of Node.js?
@@ -54,3 +47,10 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * ```[Question10]``` State sharing issues between multiple processes or multiple web services?
 
 [View more](/en/process-threads.md)
+
+## [Test](/en/test.md)
+
+* ```[Question1]``` What's a test pyramid? Give an example!
+* ```[Question2]``` What's a stub? Name a use case.
+
+[View more](/en/test.md)

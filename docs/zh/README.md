@@ -23,13 +23,6 @@
 
 [阅读更多](/zh/common.md)
 
-## [测试](/zh/test.md)
-
-* ```[Question1]``` 什么是测试金字塔? 请给一个例子!
-* ```[Question2]``` 什么是 Stub？用一个例子说明
-
-[阅读更多](/zh/test.md)
-
 ## [事件/异步](/zh/event-async.md)
 
 * ```[Question1]``` Node.js 中定时功能的顺序是怎样的？
@@ -54,3 +47,10 @@
 * ```[Question10]``` 多进程或多个 Web 服务之间的状态共享问题？
 
 [阅读更多](/zh/process-threads.md)
+
+## [测试](/zh/test.md)
+
+* ```[Question1]``` 什么是测试金字塔? 请给一个例子!
+* ```[Question2]``` 什么是 Stub？用一个例子说明
+
+[阅读更多](/zh/test.md)
