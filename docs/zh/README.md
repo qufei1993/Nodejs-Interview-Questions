@@ -4,7 +4,7 @@
 
 如果您这想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
-* 语言: [中文](/zh/) | [English](/)
+* 语言: [:cn: 中文](/zh/) | [:uk: English](/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [基础](/zh/common.md)

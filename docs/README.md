@@ -4,7 +4,7 @@ This is a list of questions including Node.js learning and interviews. I will up
 
 If you want to learn more about the **Node.js technology stack**, recommend the open source project [Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
 
-* Languages: [中文](/zh/) | [English](/)
+* Languages: [:cn: 中文](/zh/) | [:uk: English](/)
 * Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [Common](/en/common.md)
