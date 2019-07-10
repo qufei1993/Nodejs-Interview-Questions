@@ -165,7 +165,7 @@ const logError = (error) => {
     }
 },
   updateTransaction = (t) => {
-    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}, logError);
+    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}`, logError);
 },
   handleTransactions = (transactions) => {
     transactions.each(updateTransaction);

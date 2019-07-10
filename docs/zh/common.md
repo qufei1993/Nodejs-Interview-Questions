@@ -128,7 +128,7 @@ libuv 库是 I/O 操作的核心部分，例如读取文件和 OS 交互。
 
 **APIs (NodeJS Core Libs)**
 
-Node.js APIs 是根据您这请求去调用一些函数执行一些业务操作。默认情况下 Node.js 的 APIs 都是异步的，但是你想同步使用也是可以的（**同步方式是不推荐的**）。
+Node.js APIs 是根据您的请求去调用一些函数执行一些业务操作。默认情况下 Node.js 的 APIs 都是异步的，但是你想同步使用也是可以的（**同步方式是不推荐的**）。
 
 例如，这个 fs 模块可以使用同步方式也可以使用异步方式。
 
@@ -174,7 +174,7 @@ const logError = (error) => {
     }
 },
   updateTransaction = (t) => {
-    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}, logError);
+    query(`UPDATE transactions SET value = ${t.value*0.1} WHERE id=${t.id}`, logError);
 },
   handleTransactions = (transactions) => {
     transactions.each(updateTransaction);
@@ -186,7 +186,7 @@ const logError = (error) => {
 query("SELECT clientId FROM clients WHERE clientName='picanteverde';",handleClient);
 ```
 
-尽管这个代码相比第一个示例更容易易读，而且我们创建的的函数还可以得到复用。但是在某些情况下，我们想要使程序更健壮可通过 Promise 来解决。Promises allow additional desirable behavior such as error propagation and chaining. Node.js includes native support for them.
+尽管这个代码相比第一个示例更容易阅读，而且我们创建的的函数还可以得到复用。但是在某些情况下，我们想要使程序更健壮可通过 Promise 来解决。
 
 此外，generators 也提供了强大的回调地狱解决方案，使用它可以解决不同回调之间的依赖关系。然而 generators 会更高级一些使用起来会复杂一些。关于 Generators 更多信息可以阅读这篇文章 [Generators in Node.js](http://strongloop.com/strongblog/how-to-generators-node-js-yield-use-cases/)
 
@@ -248,7 +248,7 @@ NPM 最好的一点是它会在本地存储我们所安装的依赖项，存在�
 
 **需要 NPM 包**
 
-在我们在开发一些 Node.js 项目时，可能会遇到一些地方需要 NPM，例如链接 Redis、MongoDB 或者发送请求 Request 等，有了这些模块可以使我们更专注于业务开发，当然有时你会有些特别的需求，这时可能需要自己去封装一个 NPM 模块，实现复用。
+当我们在开发一些 Node.js 项目时，可能会遇到一些地方需要 NPM，例如链接 Redis、MongoDB 或者发送请求 Request 等，有了这些模块可以使我们更专注于业务开发，当然有时你会有些特别的需求，这时可能需要自己去封装一个 NPM 模块，实现复用。
 
 点击下面 Source 阅读更多关于 NPM 的相关内容
 
