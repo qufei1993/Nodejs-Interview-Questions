@@ -104,3 +104,36 @@ server.listen(3000, '127.0.0.1', () => {
     console.log('service is listening at http://127.0.0.1:3000');
 });
 ```
+
+## Q6：Node.js 的核心组件有哪些？
+
+Node.js 的核心组建是系统 API、V8 引擎和 Libuv。
+
+**Libuv 库**
+
+libuv 库是一个跨平台的支持事件驱动的 I/O 库。它是使用 C 和 C++ 语言为 Node.js 所开发的。但是它也被应用于 Mozilla's 的 Rust、Luvit、Julia、pyuv 等其它的语言。
+
+libuv 库是 I/O 操作的核心部分，例如读取文件和 OS 交互。
+
+关于 Libuv 的学习，可以参考 [libuv中文教程](https://github.com/luohaha/Chinese-uvbook/)
+
+**V8 引擎**
+
+来自于谷歌：“V8 是谷歌开源的高性能 JavaScript 引擎”，使用 C++ 开发，并在谷歌浏览器中使用。V8 中实现的 ECMAScript 中指定 ECMA - 262 ，第 3版运行在 Windows XP 和 Vista、Mac OS X 的 10.5 和 Linux 系统使用 IA - 32 或 ARM/MIPS 处理器。V8 可以独立运行，也可以嵌入到任何 C++ 应用程序。
+
+如果你感兴趣想学习更多的 V8 引擎，请访问 [What is V8?](https://v8.dev/)
+
+**APIs (NodeJS Core Libs)**
+
+Node.js APIs 是根据您这请求去调用一些函数执行一些业务操作。默认情况下 Node.js 的 APIs 都是异步的，但是你想同步使用也是可以的（**同步方式是不推荐的**）。
+
+例如，这个 fs 模块可以使用同步方式也可以使用异步方式。
+
+```js
+var fs = require('fs');  
+fs.readFile('/files/help.txt', function(err, buf) {  
+    // use fs.readFileSync() for sync operation. console.log(buf.toString());  
+});   
+```
+
+Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://www.c-sharpcorner.com/UploadFile/dbd951/introduction-to-nodejs-a-ssjs-part-i/)

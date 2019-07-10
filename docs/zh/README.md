@@ -16,6 +16,7 @@
 * 「Question3」如何用 Node.js 监听 80 端口？
 * 「Question4」什么是错误优先的回调函数？
 * 「Question5」你可以在 Node.js 中创建 Http 服务吗？通过代码来展示
+* 「Question6」Node.js 的核心组件有哪些？
 
 [阅读更多](/zh/common.md)
 

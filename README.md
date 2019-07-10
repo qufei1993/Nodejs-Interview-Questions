@@ -16,6 +16,7 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * 「Question3」How can you listen on port 80 with Node?
 * 「Question4」What is an error-first callback?
 * 「Question5」Can you create Http Server in Node.js, explain with code?
+* 「Question6」What are the main components of Node.js?
 
 ## [Test](/docs/en/test.md)
 
@@ -48,4 +49,4 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * 「Question9」What is the current working directory of the process? What is the role?
 * 「Question10」State sharing issues between multiple processes or multiple web services?
 
-[阅读更多](/docs/en/process-threads.md)
+[View more](/docs/en/process-threads.md)

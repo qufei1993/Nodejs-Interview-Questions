@@ -99,3 +99,36 @@ server.listen(3000, '127.0.0.1', () => {
     console.log('service is listening at http://127.0.0.1:3000');
 });
 ```
+
+## Q6: What are the main components of Node.js?
+
+The main components of NodeJs are APIs, a V8 Engine and Libuv.
+
+**Libuv Library**
+
+Libuv is a multi-platform support library for asynchronous I/O. It was developed for Node.js using C and C++. But it's also used by Mozilla's Rust language, Luvit, Julia, pyuv and others.
+
+This libuv library is the main part for I/O related operations like reading files and interacting with the OS.
+
+You can check it out on GitHub for more information about [the libuv library](https://github.com/nikhilm/uvbook).
+
+**V8 Engine**
+
+From Google: “V8 is Google's open-source high-performance JavaScript engine, written in C++ and used in Google Chrome, the open source browser from Google. It implements ECMAScript as specified in ECMA-262, 3rd edition and runs on Windows XP and Vista, Mac OS X 10.5+, and Linux systems that use IA-32, ARM or MIPS processors. V8 can run standalone, or can be embedded into any C++ application”.
+
+If you are interested in learning more about the V8 engine, please visit [here](https://v8.dev/).
+
+**APIs (NodeJS Core Libs)**
+
+The NodeJs APIs are nothing but functions to do something upon your request. By default the NodeJS apis are asynchronous in nature but still you can use NodeJS APIs synchronously.
+
+For example, the fs module could be used either synchronously or asynchronously.
+
+```js
+var fs = require('fs');  
+fs.readFile('/files/help.txt', function(err, buf) {  
+    // use fs.readFileSync() for sync operation. console.log(buf.toString());  
+});   
+```
+
+Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://www.c-sharpcorner.com/UploadFile/dbd951/introduction-to-nodejs-a-ssjs-part-i/)
