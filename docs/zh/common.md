@@ -32,7 +32,7 @@ Source: [Introduction To Node.js](https://www.c-sharpcorner.com/article/introduc
 
 **nvm 安装**
 
-这里推荐您使用 nvm 工具安装，方便后期的升级进行 Node.js 版本管理，一下为安装步骤：
+这里推荐您使用 nvm 工具安装，方便后期的升级进行 Node.js 版本管理，以下为安装步骤：
 
 * 安装 nvm：wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 * 查看所有 Node.js 版本：nvm ls-remote
