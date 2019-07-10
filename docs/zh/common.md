@@ -143,8 +143,6 @@ Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://
 
 “回调地狱”是指严重的回调嵌套，这些回调嵌套使得代码变得难以阅读和维护。
 
-“Callback hell” refers to heavily nested callbacks that have become unweildy or unreadable.
-
 以下是回调嵌套的示例：
 
 ```js
