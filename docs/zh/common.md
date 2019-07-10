@@ -108,7 +108,7 @@ server.listen(3000, '127.0.0.1', () => {
 });
 ```
 
-## Q6：Node.js 的核心组件有哪些？
+## Q6: Node.js 的核心组件有哪些？
 
 Node.js 的核心组建是系统 API、V8 引擎和 Libuv。
 
@@ -141,7 +141,7 @@ fs.readFile('/files/help.txt', function(err, buf) {
 
 Source: [Introduction to NodeJS, A SSJS: Part I - Components Explained](https://www.c-sharpcorner.com/UploadFile/dbd951/introduction-to-nodejs-a-ssjs-part-i/)
 
-## Q7：什么是“回调地狱”及如何避免它？
+## Q7: 什么是“回调地狱”及如何避免它？
 
 “回调地狱”是指严重的回调嵌套，这些回调嵌套使得代码变得难以阅读和维护。
 
@@ -196,7 +196,7 @@ Source: [8 Essential Node.js Interview Questions](https://www.toptal.com/nodejs/
 
 ## Q8: 什么是 Node.js 的事件驱动编程？
 
-事件驱动程序是由事件（click、load 等）决定的代码流程术语。它是当今流行编程语言（例如 C#、Java）里一个最基本的里程碑，在这里不会详细讲述。在Node.js 中或者一些其它类型的 JavaScript 项目中，我们都在使用事件驱动编程。也许你并不知道事件驱动编程，但是在一些页面加载或按钮单机事件中，你已经在使用了。
+事件驱动程序是由事件（click、load 等）决定的代码流程术语。它是当今流行编程语言（例如 C#、Java）里一个最基本的里程碑，在这里不会详细讲述。在Node.js 中或者一些其它类型的 JavaScript 项目中，我们都在使用事件驱动编程。也许你并不知道事件驱动编程，但是在一些页面加载或按钮单击事件中，你已经在使用了。
 
 举一个典型的事件驱动流程的例子，看下它是如何在 Node.js 中完成中:
 
@@ -256,7 +256,7 @@ Source: [How to Create Nodejs Module and Publish Over to Npm](https://www.c-shar
 
 ## Q10: Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
-Node.js 可以做 Web 服务端、命令行工具 (Java, PHP 可以做的. JS 也可以做)，现在让我们看下 Node.js 的 10 个应用场景:
+Node.js 可以做 Web 服务端、命令行工具 (Java, PHP 可以做的 JS 也可以做)，现在让我们看下 Node.js 的 10 个应用场景:
 
 1. Web 开发: Express + EJS + MongoDB(mongoose)/Mysql
 2. REST 开发: Restify
