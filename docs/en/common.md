@@ -206,3 +206,20 @@ As you can see, this is a non-blocking sample, because json_finished does not wo
 It starts working when you call the getJSONfromDestination method and send param as the function to json_finished.
 
 Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)
+
+## Q9: What does Node.js do? 10 application scenarios for Node.js?
+
+Web Server Backend (Java, PHP do node. JS can Do)、Command-line tools，Now count the 10 scenarios of Node.js:
+
+1. Web Development: Express + EJS + MongoDB(mongoose)/Mysql
+2. REST Development: Restify
+3. Web chat Room (IM): Express + Socket.io
+4. Web Crawler: Cheerio/request
+5. Web Blog: Hexo
+6. Web Forum: Nodeclub
+7. Web Slideshow: Cleaver
+8. Front-end package management platform: bower.js
+9. OAuth Certification: Passport
+10. Timer Task Tool: Later
+
+Source: [What does node. js do? 10 application scenarios for node. js](https://topic.alibabacloud.com/a/what-does-node-js-do-10-application-scenarios-for-node-js_4_87_30002440.html)

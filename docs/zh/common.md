@@ -217,3 +217,20 @@ getJSONfromDestination(jsonfinished);
 如上所示，这是一个非阻塞的例子，因为 json_finished 不是你所想向的那样会直接工作。当您调用 getJSONfromDestination 函数并将 jsonfinished 做为参数传递时，它才开始工作。
 
 Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)
+
+## Q9: Node.js 可以做什么? 10 个 Node.js 的应用场景?
+
+Node.js 可以做 Web 服务端、命令行工具 (Java, PHP 可以做的. JS 也可以做)，现在让我们看下 Node.js 的 10 个应用场景:
+
+1. Web 开发: Express + EJS + MongoDB(mongoose)/Mysql
+2. REST 开发: Restify
+3. IM 即时聊天: Express + Socket.io
+4. 网络爬虫: Cheerio/request
+5. 博客系统: Hexo
+6. 网络论坛: Nodeclub
+7. Web 幻灯片: Cleaver
+8. 前端构建工具: bower.js
+9. OAuth 认证: Passport
+10. 定时任务工具: Later
+
+Source: [What does node. js do? 10 application scenarios for node. js](https://topic.alibabacloud.com/a/what-does-node-js-do-10-application-scenarios-for-node-js_4_87_30002440.html)

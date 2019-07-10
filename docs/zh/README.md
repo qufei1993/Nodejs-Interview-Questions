@@ -19,6 +19,7 @@
 * ```[Question6]``` Node.js 的核心组件有哪些？
 * ```[Question7]``` 什么是“回调地狱”及如何避免它？
 * ```[Question8]``` 什么是 Node.js 的事件驱动编程？
+* ```[Question9]``` Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
 [阅读更多](/zh/common.md)
 

@@ -19,6 +19,7 @@ If you want to learn more about the Node.js technology stack, recommend the open
 * ```[Question6]``` What are the main components of Node.js?
 * ```[Question7]``` What is “callback hell” and how can it be avoided?
 * ```[Question8]``` What are the event-Driven Programming of Node.js?
+* ```[Question9]``` What does Node.js do? 10 application scenarios for Node.js?
 
 [View more](/en/common.md)
 
