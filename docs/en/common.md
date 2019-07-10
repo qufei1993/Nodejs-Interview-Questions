@@ -184,3 +184,25 @@ Additionally, a more supercharged solution to callback hell was provided by gene
 However, these approaches are pretty dated at this point. The current solution is to use async/await—an approach that leverages Promises and finally makes it easy to flatten the so-called “pyramid of doom” shown above.
 
 Source: [8 Essential Node.js Interview Questions](https://www.toptal.com/nodejs/interview-questions)
+
+## Q8: What are the event-Driven Programming of Node.js?
+
+Event-Driven Programming is the term where the flow of the code is determined by events (click, load and so on). It's one of the basic milestones of today's popular programming languages, such as C#, Java and many more; I won't dwell on all of them here. In Node.js and moreover in any kind of JavaScript project, you'll be using or have used event-driven processes. Whether it's a page onload or a button click event, this is something you have done, whether you knew it or not.
+
+Let's make an example to the classic event-driven process and how its done in NodeJS:
+
+result = getJSONfromDestination();  
+binddata(result);  
+The operation above requires a blocking I/O process (single-threaded operation that waits for the previously working synchronous code).
+
+Now let's have a look at how we do the asynchronous way (a non-blocking I/O process).
+
+json_finished = function(result){  
+binddata(result);  
+}  
+  
+getJSONfromDestination(jsonfinished);  
+As you can see, this is a non-blocking sample, because json_finished does not work first as you can imagine.
+It starts working when you call the getJSONfromDestination method and send param as the function to json_finished.
+
+Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)

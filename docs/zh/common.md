@@ -186,8 +186,34 @@ query("SELECT clientId FROM clients WHERE clientName='picanteverde';",handleClie
 
 尽管这个代码相比第一个示例更容易易读，而且我们创建的的函数还可以得到复用。但是在某些情况下，我们想要使程序更健壮可通过 Promise 来解决。Promises allow additional desirable behavior such as error propagation and chaining. Node.js includes native support for them.
 
-此外，generators 也提供了强大了回调地狱解决方案，使用它可以解决不同回调之间的依赖关系。然而 generators 会更高级一些使用起来会复杂一些。关于 Generators 更多信息可以阅读这篇文章 [Generators in Node.js](http://strongloop.com/strongblog/how-to-generators-node-js-yield-use-cases/)
+此外，generators 也提供了强大的回调地狱解决方案，使用它可以解决不同回调之间的依赖关系。然而 generators 会更高级一些使用起来会复杂一些。关于 Generators 更多信息可以阅读这篇文章 [Generators in Node.js](http://strongloop.com/strongblog/how-to-generators-node-js-yield-use-cases/)
 
 然而，以上的虽然能很好解决回调地狱问题，但是目前有了更好的方案 Async/Await。使用 Async/Await 需要注意 Node.js 版本要在 v7.5 版本之上。
 
 Source: [8 Essential Node.js Interview Questions](https://www.toptal.com/nodejs/interview-questions)
+
+## Q8: 什么是 Node.js 的事件驱动编程？
+
+事件驱动程序是由事件（click、load 等）决定的代码流程术语。它是当今流行编程语言（例如 C#、Java）里一个最基本的里程碑，在这里不会详细讲述。在Node.js 中或者一些其它类型的 JavaScript 项目中，我们都在使用事件驱动编程。也许你并不知道事件驱动编程，但是在一些页面加载或按钮单机事件中，你已经在使用了。
+
+举一个典型的事件驱动流程的例子，看下它是如何在 Node.js 中完成中:
+
+```js
+result = getJSONfromDestination();  
+binddata(result);  
+```
+
+上述操作是一个阻塞 I/O（单线程模式下将会等待这个阻塞 I/O 完成之后才会进行下一步）
+
+现在让我们看看异步方式该如何进行（非阻塞 I/O 进程）
+```js
+json_finished = function(result){  
+    binddata(result);  
+}  
+  
+getJSONfromDestination(jsonfinished); 
+```
+
+如上所示，这是一个非阻塞的例子，因为 json_finished 不是你所想向的那样会直接工作。当您调用 getJSONfromDestination 函数并将 jsonfinished 做为参数传递时，它才开始工作。
+
+Source: [NodeJS Series #6: Event - Driven Programming](https://www.c-sharpcorner.com/UploadFile/iersoy/nodejs-series-sharp6-event-driven-programming/)
