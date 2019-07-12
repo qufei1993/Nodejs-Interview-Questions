@@ -5,11 +5,13 @@
 
 ## Q1: What are processes and threads? difference between?
 
-关于线程和进程是服务端一个很基础的概念，在文章 [Node.js进阶之进程与线程](https://www.imooc.com/article/288006) 中介绍了进程与线程的概念之后又给出了在 Node.js 中的进程和线程的实际应用，对于这块不是很理解的建议先看下。
+Threads and processes are a very basic concept of the server. After the concept of processes and threads is introduced in the article [Node.js Advanced Processes and Threads](https://www.imooc.com/article/288006) The actual application of the process and thread in Node.js is given. For this piece of advice that is not very understandable, look at it first.
 
 ## Q2: What is an orphan process?
 
-父进程创建子进程之后，父进程退出了，但是父进程对应的一个或多个子进程还在运行，这些子进程会被系统的 init 进程收养，对应的进程 ppid 为 1，这就是孤儿进程。通过以下代码示例说明。
+After the parent process creates the child process, the parent process exits, but one or more child processes corresponding to the parent process are still running. These child processes are adopted by the system's init process, and the corresponding process ppid is 1. This is the orphan process
+
+**For example**
 
 ```js
 // master.js
@@ -20,14 +22,14 @@ const worker = fork('worker.js');
 
 worker.send('server', server);
 console.log('worker process created, pid: %s ppid: %s', worker.pid, process.pid);
-process.exit(0); // 创建子进程之后，主进程退出，此时创建的 worker 进程会成为孤儿进程
+process.exit(0);
 ```
 
 ```js
 // worker.js
 const http = require('http');
 const server = http.createServer((req, res) => {
-	res.end('I am worker, pid: ' + process.pid + ', ppid: ' + process.ppid); // 记录当前工作进程 pid 及父进程 ppid
+	res.end('I am worker, pid: ' + process.pid + ', ppid: ' + process.ppid);
 });
 
 let worker;
@@ -41,25 +43,25 @@ process.on('message', function (message, sendHandle) {
 });
 ```
 
-[孤儿进程 示例源码](https://github.com/Q-Angelo/project-training/tree/master/nodejs/orphan-process)
-
-控制台进行测试，输出当前工作进程 pid 和 父进程 ppid
+The console tests to output the current worker process pid and the parent process ppid: 
 
 ```bash
 $ node master
 worker process created, pid: 32971 ppid: 32970
 ```
 
-由于在 master.js 里退出了父进程，活动监视器所显示的也就只有工作进程。
+Since the parent process is exited in master.js, the activity monitor shows only the worker process.
 
 ![图片描述](//img.mukewang.com/5d07a4b50001ab9316160284.png)
 
-再次验证，打开控制台调用接口，可以看到工作进程 32971 对应的 ppid 为 1（为 init 进程），此时已经成为了孤儿进程
+Verify again, open the console call interface, you can see that the ppid corresponding to the work process 32971 is 1 (for the init process), which has become an orphan process.
 
 ```bash
 $ curl http://127.0.0.1:3000
 I am worker, pid: 32971, ppid: 1
 ```
+
+[Source code](https://github.com/Q-Angelo/project-training/tree/master/nodejs/orphan-process)
 
 ## Q3：creates multiple processes, there is ```app.listen(port)``` in the code. Why is it not reported that the port is occupied when forking?
 
@@ -88,7 +90,7 @@ http.createServer((req, res) => {
 
 以上代码示例，控制台执行 ```node master.js``` 只有一个 worker 可以监听到 3000 端口，其余将会抛出 ``` Error: listen EADDRINUSE :::3000 ``` 错误
 
-那么多进程模式下怎么实现多端口监听呢？答案还是有的，通过句柄传递 Node.js v0.5.9 版本之后支持进程间可发送句柄功能，怎么发送？如下所示：
+那么多进程模式下怎么实现多端口监听呢？答案还是有的，通过句柄传递。Node.js v0.5.9 版本之后支持进程间可发送句柄功能，怎么发送？如下所示：
 
 ```js
 /**

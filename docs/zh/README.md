@@ -4,7 +4,7 @@
 
 如果您想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
-* 语言: [:cn: 中文](/zh/) | [:uk: English](/)
+* 语言: [:cn: 中文](/zh/) | [:uk: English](/en/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
 ## [基础](/zh/common.md)
@@ -23,6 +23,14 @@
 * ```[Question10]``` Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
 [阅读更多](/zh/common.md)
+
+## [模块](/zh/module.md)
+
+* ```[Question1]``` require 的加载机制？
+* ```[Question2]``` module.exports 与 exports 的区别
+* ```[Question3]``` 假设有 a.js、b.js 两个模块相互引用，会有什么问题？是否为陷入死循环？
+
+[阅读更多](/zh/module.md)
 
 ## [事件/异步](/zh/event-async.md)
 

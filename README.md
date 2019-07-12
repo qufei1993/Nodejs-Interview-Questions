@@ -1,57 +1,65 @@
 # Nodejs-Interview-Questions
 
-This is a list of questions including Node.js learning and interviews. I will update this repository on a regular basis. You are also welcome to submit some PR or some good suggestions! I hope to help you with your study and work. Good luck ❤️
+这是一份包含 Node.js 学习与面试的问题列表，我会定期的更新本仓库，也欢迎您提交一些 PR 或者一些好的建议！希望能对您的学习与工作有所帮助，Good luck ❤️
 
-If you want to learn more about the **Node.js technology stack**, recommend the open source project [Nodejs-Roadmap](https://www.nodejs.red). But it is only available in Chinese, and you can translate it if you are interested.
+如果您想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
-* Languages: [:cn: 中文](/docs/zh/) | [:uk: English](/)
-* Preview: [https://interview.nodejs.red](https://interview.nodejs.red)
+* 语言: [:cn: 中文](/docs/zh/) | [:uk: English](/docs/en/)
+* 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
-## [Common](/docs/common.md)
+## [基础](/docs/zh/common.md)
 
-> Describe some basic or general issues here.
+> 这个模块将会描述一些基础的或者通用的问题。
 
-* ```[Question1]``` What is Node.js?
-* ```[Question2]``` How can I install Node.js?
-* ```[Question3]``` How can you listen on port 80 with Node?
-* ```[Question4]``` What is an error-first callback?
-* ```[Question5]``` Can you create Http Server in Node.js, explain with code?
-* ```[Question6]``` What are the main components of Node.js?
-* ```[Question7]``` What is “callback hell” and how can it be avoided?
-* ```[Question8]``` What are the event-Driven Programming of Node.js?
-* ```[Question9]``` What is NPM? What is the need of NPM in Node.js?
-* ```[Question10]``` What does Node.js do? 10 application scenarios for Node.js?
+* ```[Question1]``` 什么是 Node.js？
+* ```[Question2]``` 如何安装 Node.js？
+* ```[Question3]``` 如何用 Node.js 监听 80 端口？
+* ```[Question4]``` 什么是错误优先的回调函数？
+* ```[Question5]``` 你可以在 Node.js 中创建 Http 服务吗？通过代码来展示
+* ```[Question6]``` Node.js 的核心组件有哪些？
+* ```[Question7]``` 什么是“回调地狱”及如何避免它？
+* ```[Question8]``` 什么是 Node.js 的事件驱动编程？
+* ```[Question9]``` 什么是 NPM? 在 Node.js 中什么时候需要 NPM? 
+* ```[Question10]``` Node.js 可以做什么? 10 个 Node.js 的应用场景?
 
-[View more](/docs/common.md)
+[阅读更多](/docs/zh/common.md)
 
-## [Event/Async](/docs/event-async.md)
+## [模块](/zh/module.md)
 
-* ```[Question1]``` What are the timing features of Node.js?
-* ```[Question2]``` What is the difference between process.nextTick and setTimeout recursive calls?
-* ```[Question3]``` Explain event loop architecture of JavaScript.
-* ```[Question4]``` Explain event loop architecture of NodeJS.
-* ```[Question5]``` What is Event Loop and Event Emitter ?
+* ```[Question1]``` require 的加载机制？
+* ```[Question2]``` module.exports 与 exports 的区别
+* ```[Question3]``` 假设有 a.js、b.js 两个模块相互引用，会有什么问题？是否为陷入死循环？
 
-[View more](/docs/event-async.md)
+[阅读更多](/zh/module.md)
 
-## [Process/Threads](/docs/process-threads.md)
+## [事件/异步](/docs/zh/event-async.md)
 
-* ```[Question1]``` What are processes and threads? difference between?
-* ```[Question2]``` What is an orphan process?
-* ```[Question3]``` creates multiple processes, there is ```app.listen(port)``` in the code. Why is it not reported that the port is occupied when forking?
-* ```[Question4]``` What is IPC communication, how to establish IPC communication? What scenarios need to use IPC communication?
-* ```[Question5]``` Node.js single-threaded or multi-threaded? Further questioning why is it single threaded?
-* ```[Question6]``` about the daemon, what, why, how to write?
-* ```[Question7]``` implements a simple command line interaction program?
-* ```[Question8]``` make a js file an executable command program under Linux?
-* ```[Question9]``` What is the current working directory of the process? What is the role?
-* ```[Question10]``` State sharing issues between multiple processes or multiple web services?
+* ```[Question1]``` Node.js 中定时功能的顺序是怎样的？
+* ```[Question2]``` process.nextTick 与 setTimeout 递归调用区别？
+* ```[Question3]``` 解释下 JavaScript 中的 EventLoop（事件循环）？
+* ```[Question4]``` 解释下 NodeJS 中的 EventLoop（事件循环）？
+* ```[Question5]``` 什么是 Event Loop 和 Event Emitter ?
 
-[View more](/docs/process-threads.md)
+[阅读更多](/docs/zh/event-async.md)
 
-## [Test](/docs/test.md)
+## [进程/线程](/docs/zh/process-threads.md)
 
-* ```[Question1]``` What's a test pyramid? Give an example!
-* ```[Question2]``` What's a stub? Name a use case.
+* ```[Question1]``` Node.js 什么是进程和线程？之间的区别？
+* ```[Question2]``` 什么是孤儿进程？
+* ```[Question3]``` 创建多进程时，代码里有 app.listen(port) 在进行 fork 时，为什么没有报端口被占用？
+* ```[Question4]``` 什么是 IPC 通信，如何建立 IPC 通信？什么场景下需要用到 IPC 通信？
+* ```[Question5]``` Node.js 是单线程还是多线程？进一步会提问为什么是单线程？
+* ```[Question6]``` 关于守护进程，是什么、为什么、怎么编写？
+* ```[Question7]``` 实现一个简单的命令行交互程序？
+* ```[Question8]``` 如何让一个 js 文件在 Linux 下成为一个可执行命令程序？
+* ```[Question9]``` 进程的当前工作目录是什么? 有什么作用？
+* ```[Question10]``` 多进程或多个 Web 服务之间的状态共享问题？
 
-[View more](/docs/test.md)
+[阅读更多](/docs/zh/process-threads.md)
+
+## [测试](/docs/zh/test.md)
+
+* ```[Question1]``` 什么是测试金字塔? 请给一个例子!
+* ```[Question2]``` 什么是 Stub？用一个例子说明
+
+[阅读更多](/docs/zh/test.md)
