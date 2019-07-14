@@ -4,8 +4,10 @@
 
 如果您想更全面的学习 Node.js 技术栈，为您推荐开源项目 [Nodejs-Roadmap](https://www.nodejs.red)
 
-* 语言: [:cn: 中文](/docs/zh/) | [:uk: English](/docs/en/)
+* 语言: [:cn: 中文](/docs/zh/README.md) | [:uk: English](/docs/en/README.md)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
+
+> 作者： 五月君，Node.js Developer，[慕课网认证作者](https://www.imooc.com/u/2667395)。
 
 ## [基础](/docs/zh/common.md)
 

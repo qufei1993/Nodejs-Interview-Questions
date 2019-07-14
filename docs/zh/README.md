@@ -7,6 +7,8 @@
 * 语言: [:cn: 中文](/zh/) | [:uk: English](/en/)
 * 预览: [https://interview.nodejs.red](https://interview.nodejs.red)
 
+> 作者： 五月君，Node.js Developer，[慕课网认证作者](https://www.imooc.com/u/2667395)。
+
 ## [基础](/zh/common.md)
 
 > 这个模块将会描述一些基础的或者通用的问题。
