@@ -169,9 +169,60 @@ Source: [Introduction to NodeJS, A SSJS: Part II - EventLoop Explained](https://
 
 ## Q6: Node.js 中的 Event Loop 有哪几个阶段，且每个阶段进行一下描述？
 
+以下为 Node.js 官网提供的说明，这是一次事件循环所经历的六个阶段，这些阶段也是按照顺序依次执行的，在以下阶段中，每个阶段都会有一个先进先出的回调函数队列，只有当前阶段的回调函数队列清空了，才会进入到下一个阶段。
+
 ```js
-// todo:
+┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
 ```
+
+下面对每个阶段做一个解释，同官网一样，你也可以参考官网说明 [https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+
+#### timers 定时器
+
+定时器阶段会执行 setTimeout() 和 setInterval() 两个回调函数，在这个阶段主线程会检查当前时间是否满足定时器的条件，如果满足就执行，不满足会跳过进入下一个阶段，如果在下一个阶段阻塞了，那么再进入定时器执行时，时间可能就不那么准确了。
+
+#### pending callbacks
+
+pending callbacks 意为挂起的回调函数，此阶段对某些系统操作（如 TCP 错误类型）执行回调。例如，如果 TCP 套接字在尝试连接时接收到 ECONNREFUSED，则某些 *nix 的系统希望等待报告错误。这将被排队以在 挂起的回调阶段执行。
+
+以下回调函数排除
+
+* setTimeout()和setInterval()的回调函数
+* setImmediate()的回调函数
+* 用于关闭请求的回调函数，比如socket.on('close', ...)
+
+#### idle, prepare 
+
+该阶段仅系统内部（libuv）调用
+
+#### poll
+
+检索新的 I/O 事件;执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，它们由计时器和 setImmediate() 排定的之外），其余情况 node 将在此处阻塞。
+
+#### check
+
+setImmediate() 回调函数在这里执行。
+
+#### close callbacks 
+
+一些准备关闭的回调函数，如：socket.on('close', ...)。
 
 ## Q7：什么是 Event Loop 和 Event Emitter ?
 
@@ -185,7 +236,7 @@ Source: [top-20-interview-questions-on-nodejs](https://www.codingdefined.com/201
 
 ## Q8: 描述下 Linux/Unix 中的几种 I/O 模型?
 
-I/O 模型的演进：同步阻塞IO -> 同步非阻塞IO -> IO多路复用 -> 信号驱动IO -> 异步IO模型，更多可参考 [操作系统的轮询技术演进](https://www.nodejs.red/#/nodejs/event-loopb)
+I/O 模型的演进：同步阻塞IO -> 同步非阻塞IO -> IO多路复用 -> 信号驱动IO -> 异步IO模型，更多可参考 [操作系统的轮询技术演进](https://mp.weixin.qq.com/s/t8pH3xqPS5CiuyaUx-8wcA)
 
 ## Q9: I/O 多路复用模式下 select 和 epoll 的区别？
 
@@ -193,11 +244,11 @@ I/O 模型的演进：同步阻塞IO -> 同步非阻塞IO -> IO多路复用 -> �
 
 从操作系统支持上来看，目前流行的高性能 Web 服务器 Nginx 是基于 epoll 来实现高并发，当然如果你的链接很小的情况下区别还是不大的 select 也能满足，如果是大流量、高并发情况 epoll 目前还是首选模型。
 
-## Q10: Node.js 中的 setTimeout 定时器是否会产生时间不准确？造成原因？
+## Q10: setTimeout/setInterval 定时器时间是否精确？
 
-```js
-// todo:
-```
+当实现一些定时任务的时候可能会想到使用 setTimeout/setInterval，但是它们的时间是精确的吗？其实不然，例如代码块 ```setTimeout(function(){}, 5)```，虽然设置为 5，但并不能保证会在这个时间立即执行，在 JavaScript 代码执行时会在合适的时间将代码插入任务队列，真正执行是要进到事件循环以后才开始的，在 Node.js 中每次事件循环都会经过六个阶段，当进入 timers 阶段时，开始处理 setTimeout/setInterval 这两个函数，在这个阶段主线程会检查当前时间是否满足定时器的条件，如果满足就执行，不满足会跳过进入下一个阶段，如果在下一个阶段阻塞了，那么再进入定时器执行时，时间可能就不那么准确了。
+
+在官网介绍中也有这样一段话描述 **```however, Operating System scheduling or the running of other callbacks may delay them.```** 因此，setTimeout/setInterval 定时器时间并不是完全精确的（其实也在容忍范围，大部分业务是可以的），假如真的需要做一个精确的定时任务该怎么做呢？可以借助 MQ 实现，之前介绍过一篇文章 [Node.js 结合 RabbitMQ 延迟队列实现定时任务](https://mp.weixin.qq.com/s/d-mEZQdY4ZFrNxqbH_Wj7A) 可以用于订单超时自动取消、定时重试等业务系统。
 
 ## Q11: Promise的基本使用和原理？
 
