@@ -90,7 +90,11 @@ setImmediate(() => {
 // setImmediate
 ```
 
-## Q3：解释下 JavaScript 中的 EventLoop（事件循环）？
+## Q3：什么是 EventLoop（事件循环）？
+
+总结起来一句话概括，事件轮询是 JS 实现异步的具体解决方案，同步代码直接执行，异步函数或代码块先放在异步队列中，待同步函数执行完毕，轮循执行异步队列的函数。
+
+## Q4：解释下 JavaScript 中的 EventLoop（事件循环）？
 
 众所周知，JavaScript 是单线程的，当发起一个请求时会通过回调函数来接收后续的事件响应，不会造成阻塞，继续接收下一次请求操作。
 
@@ -115,9 +119,9 @@ var msg = document.getElementById("msg");
 
 如果此时事件队列中有消息，则会等待其它的消息完成之后，在去处理我们的 msg 事件消息并将完成结果渲染到 DOM 中。
 
-## Q4: 解释下 NodeJS 中的 EventLoop（事件循环）？
+## Q5: 解释下 NodeJS 中的 EventLoop（事件循环）？
 
-* 当收到一个请求时，它将使用一个 JavaScript 闭包排队进入 EventLoop，该闭包包括这个事件（请求和相应）和相应的回调。
+* 当收到一个请求时，它将使用一个 JavaScript 闭包排队进入 EventLoop，该闭包包括这个事件（request 和 response）和相应的回调。
 
 * 如果这个工作需要很长时间才能完成，将会分配一个工作线程给予这个事件来处理，这个工作线程来自 C++ 线程池，由 Libuv 库处理。
 
@@ -143,7 +147,7 @@ fs.writeFile('log.txt', 'Done', function() {
 
 执行流程如下所示：
 
-* 以上我们的代码会告诉这个节点有两个任务 read() and write() 需要执行，之后会休息以下。
+* 以上我们的代码会告诉这个节点有两个任务 read() and write() 需要执行，之后会休息一下。
 
 * read() and write() 这两个操作将会进入 Event Loop 事件队列并将这个 job 分发到工作线程。
 
@@ -163,7 +167,13 @@ fs.writeFile('log.txt', 'Done', function() {
 
 Source: [Introduction to NodeJS, A SSJS: Part II - EventLoop Explained](https://www.c-sharpcorner.com/article/node-js-interview-questions-and-answers/)
 
-## Q5：什么是 Event Loop 和 Event Emitter ?
+## Q6: Node.js 中的 Event Loop 有哪几个阶段，且每个阶段进行一下描述？
+
+```js
+// todo:
+```
+
+## Q7：什么是 Event Loop 和 Event Emitter ?
 
 **Event Loop**
 Node.js 虽是单线程应用程序，但是其基于 events and callbacks 机制，可以很好的完成并发操作。Node thread 会保持一个 EventLoop（事件循环）当任何任务完成时该节点都会触发相应的回调。
@@ -172,3 +182,77 @@ Node.js 虽是单线程应用程序，但是其基于 events and callbacks 机�
 每当完成任何任务、发生任何错误、添加一个 listener 或删除一个 listener 时，EventEmitter 都会触发一个事件。它提供了 on 和 emit 等属性，on 用于绑定函数，emit 用于触发事件。
 
 Source: [top-20-interview-questions-on-nodejs](https://www.codingdefined.com/2017/04/top-20-interview-questions-on-nodejs.html)
+
+## Q8: 描述下 Linux/Unix 中的几种 I/O 模型?
+
+I/O 模型的演进：同步阻塞IO -> 同步非阻塞IO -> IO多路复用 -> 信号驱动IO -> 异步IO模型，更多可参考 [操作系统的轮询技术演进](https://www.nodejs.red/#/nodejs/event-loopb)
+
+## Q9: I/O 多路复用模式下 select 和 epoll 的区别？
+
+在操作方式上 select 采用了线性遍历来查找，链接多了之后可以想象一下在一个诺大的数组中每次通过遍历来锁定一个链接，是多么的消耗性能。epoll 则不需要遍历，采用的是回调机制，可以看作一个H ashTable，锁定一个对象是很快的。对于文件描述符（最大连接数）select 限制为 1024，epoll 则没有这个限制，通常在 1G 内存的机器上所能支持的连接数为 10W 左右 (cat /proc/sys/fs/file-max)。
+
+从操作系统支持上来看，目前流行的高性能 Web 服务器 Nginx 是基于 epoll 来实现高并发，当然如果你的链接很小的情况下区别还是不大的 select 也能满足，如果是大流量、高并发情况 epoll 目前还是首选模型。
+
+## Q10: Node.js 中的 setTimeout 定时器是否会产生时间不准确？造成原因？
+
+```js
+// todo:
+```
+
+## Q11: Promise的基本使用和原理？
+
+* 如何异常捕获（Error、reject）通过catch捕获
+* 多个串联-链式执行的好处
+* Promise.all（并发执行） 和 Promise.race（随机执行）
+* Promise 标准-状态变化（Pending —— Fulfilled/Rejected）状态之间是不可逆的
+* then 函数，不明文指定返回实例，返回本身的 promise 实例，否则返回指定的 promise 实例
+
+## Q12: 介绍一下 async/await（和Promise的区别、联系）?
+
+* await后面必须是一个promise实例，函数外层需要加上async修饰
+* 使用了Promise，并没有和Promise冲突，完全是同步的写法，没有了回调函数
+
+## Q13: 如何实现一个 Promise？ 
+
+```js
+// todo:
+```
+
+## Q14: 介绍下 Jquery 中的 Deferred 解决方案？
+
+Jquery1.5 之后出现了 Deferred，是最早提出解决异步的方式。Promise 也是从 Deferred 演变过来的，最后逐渐一套标准，独立出来了。重点还是回归到问题本身，Deferred 是 Jquery1.5 版本对 Ajax 的改变衍生出来的一个东西，其遵循**对扩展开放修改封闭**原则，看下以下封装示例：
+
+```html
+<script>
+	// 异步加载图片示例
+	function loadImage(src) {
+		var dtd = $.Deferred();
+		var img = document.createElement('img');
+
+		img.src = src;
+		img.onload = function() {
+			dtd.resolve(img);
+		}
+
+		img.onerror = function(err) {
+			dtd.reject(err);
+		}
+
+		return dtd.promise();// 返回promise对象，而不是直接返回deferred对象
+	}
+
+	loadImage('https://images.pexels.com/photos/457044/pexels-photo-457044.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500')
+		.then(function(result) {
+			document.body.appendChild(result);
+
+			console.log(result);
+		})
+		.catch(function(err) {
+			console.error(err);
+		})
+</script>
+```
+
+**Deferred 与promise 的区别**
+
+Deferred 这种对象有主动触发 resolve、reject 这种函数，也有 done、fail、then 这种被动监听函数，这些函数混在一块很容易被外部篡改，通过生成promise 对象进行隔离，promise 只有被动监听，没有主动修改。
