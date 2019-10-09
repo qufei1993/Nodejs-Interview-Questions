@@ -194,11 +194,11 @@ Source: [Introduction to NodeJS, A SSJS: Part II - EventLoop Explained](https://
 
 下面对每个阶段做一个解释，同官网一样，你也可以参考官网说明 [https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
 
-#### timers 定时器
+**阶段一：timers 定时器**
 
 定时器阶段会执行 setTimeout() 和 setInterval() 两个回调函数，在这个阶段主线程会检查当前时间是否满足定时器的条件，如果满足就执行，不满足会跳过进入下一个阶段，如果在下一个阶段阻塞了，那么再进入定时器执行时，时间可能就不那么准确了。
 
-#### pending callbacks
+**阶段二：pending callbacks**
 
 pending callbacks 意为挂起的回调函数，此阶段对某些系统操作（如 TCP 错误类型）执行回调。例如，如果 TCP 套接字在尝试连接时接收到 ECONNREFUSED，则某些 *nix 的系统希望等待报告错误。这将被排队以在 挂起的回调阶段执行。
 
@@ -208,19 +208,19 @@ pending callbacks 意为挂起的回调函数，此阶段对某些系统操作�
 * setImmediate()的回调函数
 * 用于关闭请求的回调函数，比如socket.on('close', ...)
 
-#### idle, prepare 
+**阶段三：idle, prepare** 
 
 该阶段仅系统内部（libuv）调用
 
-#### poll
+**阶段四：poll**
 
 检索新的 I/O 事件;执行与 I/O 相关的回调（几乎所有情况下，除了关闭的回调函数，它们由计时器和 setImmediate() 排定的之外），其余情况 node 将在此处阻塞。
 
-#### check
+**阶段五：check**
 
 setImmediate() 回调函数在这里执行。
 
-#### close callbacks 
+**阶段六：close callbacks**
 
 一些准备关闭的回调函数，如：socket.on('close', ...)。
 
